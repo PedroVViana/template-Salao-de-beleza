@@ -144,26 +144,40 @@ const Services: React.FC = () => {
               Oferecemos uma ampla variedade de serviços para cuidar da sua beleza. Confira nossos preços e agende seu horário!
             </p>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8">
             {services.map((service, index) => (
-              <div key={index} className="service-card bg-white/90 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden flex flex-col">
+              <div
+                key={index}
+                className="service-card bg-white/90 backdrop-blur-sm rounded-xl shadow-lg overflow-hidden flex flex-col w-[95%] sm:w-[60%] lg:w-[40%] max-w-2xl"
+              >
                 <div className="p-4 md:p-5 border-b border-gray-100">
                   <div className="w-12 h-12 md:w-14 md:h-14 bg-beauty-pink-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <svg className="w-6 h-6 md:w-7 md:h-7 text-beauty-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      className="w-6 h-6 md:w-7 md:h-7 text-beauty-pink-500"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={service.icon} />
                     </svg>
                   </div>
-                  <h3 className="text-lg md:text-xl font-semibold text-center text-gray-800">{service.category}</h3>
+                  <h3 className="text-lg md:text-xl font-semibold text-center text-gray-800">
+                    {service.category}
+                  </h3>
                 </div>
                 <div className="p-4 md:p-5 flex-grow">
                   <ul className="space-y-2 md:space-y-3">
                     {service.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 md:gap-2">
+                      <li
+                        key={itemIndex}
+                        className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 md:gap-2"
+                      >
                         <div className="flex-grow">
                           <div className="flex items-center justify-between">
                             <h4 className="font-medium text-sm md:text-base text-gray-800">{item.name}</h4>
-                            <span className="text-beauty-pink-500 font-semibold ml-2 md:ml-4 whitespace-nowrap text-sm md:text-base">{item.price}</span>
+                            <span className="text-beauty-pink-500 font-semibold ml-2 md:ml-4 whitespace-nowrap text-sm md:text-base">
+                              {item.price}
+                            </span>
                           </div>
                           <p className="text-xs md:text-sm text-gray-600 mt-1">{item.description}</p>
                         </div>
