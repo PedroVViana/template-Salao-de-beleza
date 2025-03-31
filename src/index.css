@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilo para scroll suave */
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Animações personalizadas */
+.fade-in {
+  animation: fadeIn 1s ease-in forwards;
+}
+
+.zoom-in {
+  animation: zoomIn 2s ease-out forwards;
+}
+
+.zoom-out {
+  animation: zoomOut 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes zoomOut {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(1.5); opacity: 0; }
+}
